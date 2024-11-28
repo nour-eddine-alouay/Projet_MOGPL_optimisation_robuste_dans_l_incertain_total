@@ -19,12 +19,14 @@ Chaque partie est subdivisée en plusieurs sous-questions, avec un fichier Pytho
 3. Installez la bibliothèque Python pour Gurobi :
    ```bash
    pip install gurobipy
+### **1.3. Dépendances Python**
+Installez les bibliothèques nécessaires en exécutant la commande suivante :
+   ```bash
+   pip install matplotlib
 
 ## **2. Structure du projet**
 L'organisation du projet est la suivante :
    ```bash
-GR2_aloy_alyasfani/
-│
 ├── partie1/
 │   ├── partie1_1.py  # Code pour la question 1 de la partie 1
 │   ├── partie1_2.py  # Code pour la question 2 de la partie 1
@@ -45,3 +47,26 @@ GR2_aloy_alyasfani/
 │
 ├── GR2_aloy_alyasfani.pdf  # Rapport détaillant le projet
 ├── README.md  # Fichier de documentation
+
+## **3. Instructions d'exécution**
+
+### **3.1. Exécution globale**
+Pour exécuter toutes les parties du projet, suivez ces étapes :
+1. Naviguez dans le dossier correspondant à la partie souhaitée :
+   ```bash
+   cd partieX
+Remplacez X par le numéro de la partie (1, 2 ou 3).
+2. Exécutez le fichier Python correspondant à la question :
+   ```bash
+   python partieX_Y.py
+
+## **4. Résultats et analyse**
+
+Les résultats des simulations incluent :
+
+   Les solutions optimales pour chaque critère (maximin, minimax regret, maxOWA, minOWA).
+   Les chemins robustes pour des graphes générés aléatoirement.
+   L'évolution des temps de résolution pour différentes tailles de graphes.
+Ces résultats sont :
+   Affichés dans la console.
+   Documentés dans le fichier GR2_aloy_alyasfani.pdf, qui contient des tableaux et des graphiques pour chaque question.

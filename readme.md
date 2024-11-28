@@ -19,10 +19,12 @@ Chaque partie est subdivisée en plusieurs sous-questions, avec un fichier Pytho
 3. Installez la bibliothèque Python pour Gurobi :
    ```bash
    pip install gurobipy
+   ```
 ### **1.3. Dépendances Python**
 Installez les bibliothèques nécessaires en exécutant la commande suivante :
    ```bash
    pip install matplotlib
+   ```
 
 ## **2. Structure du projet**
 L'organisation du projet est la suivante :

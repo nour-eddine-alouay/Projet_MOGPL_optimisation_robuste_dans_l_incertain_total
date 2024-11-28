@@ -47,6 +47,9 @@ L'organisation du projet est la suivante :
    │
    ├── GR2_aloy_alyasfani.pdf  # Rapport détaillant le projet
    ├── README.md  # Fichier de documentation
+   ```
+
+
 ## **3. Instructions d'exécution**
 ### **3.1. Exécution globale**
 Pour exécuter toutes les parties du projet, suivez ces étapes :

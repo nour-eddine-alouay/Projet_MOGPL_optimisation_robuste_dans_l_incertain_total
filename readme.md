@@ -27,26 +27,26 @@ Installez les bibliothèques nécessaires en exécutant la commande suivante :
 ## **2. Structure du projet**
 L'organisation du projet est la suivante :
    ```bash
-├── partie1/
-│   ├── partie1_1.py  # Code pour la question 1 de la partie 1
-│   ├── partie1_2.py  # Code pour la question 2 de la partie 1
-│   ├── partie1_3.py  # Code pour la question 3 de la partie 1
-│   ├── partie1_4.py  # Code pour la question 4 de la partie 1
-│
-├── partie2/
-│   ├── partie2_1.py  # Code pour la question 1 de la partie 2
-│   ├── partie2_2.py  # Code pour la question 2 de la partie 2
-│   ├── partie2_3.py  # Code pour la question 3 de la partie 2
-│   ├── partie2_4.py  # Code pour la question 4 de la partie 2
-│
-├── partie3/
-│   ├── partie3_1.py  # Code pour la question 1 de la partie 3
-│   ├── partie3_2.py  # Code pour la question 2 de la partie 3
-│   ├── partie3_3.py  # Code pour la question 3 de la partie 3
-│   ├── partie3_4.py  # Code pour la question 4 de la partie 3
-│
-├── GR2_aloy_alyasfani.pdf  # Rapport détaillant le projet
-├── README.md  # Fichier de documentation
+   ├── partie1/
+   │   ├── partie1_1.py  # Code pour la question 1 de la partie 1
+   │   ├── partie1_2.py  # Code pour la question 2 de la partie 1
+   │   ├── partie1_3.py  # Code pour la question 3 de la partie 1
+   │   ├── partie1_4.py  # Code pour la question 4 de la partie 1
+   │
+   ├── partie2/
+   │   ├── partie2_1.py  # Code pour la question 1 de la partie 2
+   │   ├── partie2_2.py  # Code pour la question 2 de la partie 2
+   │   ├── partie2_3.py  # Code pour la question 3 de la partie 2
+   │   ├── partie2_4.py  # Code pour la question 4 de la partie 2
+   │
+   ├── partie3/
+   │   ├── partie3_1.py  # Code pour la question 1 de la partie 3
+   │   ├── partie3_2.py  # Code pour la question 2 de la partie 3
+   │   ├── partie3_3.py  # Code pour la question 3 de la partie 3
+   │   ├── partie3_4.py  # Code pour la question 4 de la partie 3
+   │
+   ├── GR2_aloy_alyasfani.pdf  # Rapport détaillant le projet
+   ├── README.md  # Fichier de documentation
 
 ## **3. Instructions d'exécution**
 
@@ -55,6 +55,7 @@ Pour exécuter toutes les parties du projet, suivez ces étapes :
 1. Naviguez dans le dossier correspondant à la partie souhaitée :
    ```bash
    cd partieX
+
 Remplacez X par le numéro de la partie (1, 2 ou 3).
 2. Exécutez le fichier Python correspondant à la question :
    ```bash

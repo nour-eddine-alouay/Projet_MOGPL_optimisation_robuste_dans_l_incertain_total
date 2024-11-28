@@ -56,11 +56,13 @@ Pour exécuter toutes les parties du projet, suivez ces étapes :
 1. Naviguez dans le dossier correspondant à la partie souhaitée :
    ```bash
    cd partieX
+   ```
 
 Remplacez X par le numéro de la partie (1, 2 ou 3).
 2. Exécutez le fichier Python correspondant à la question :
    ```bash
    python partieX_Y.py
+   ```
 
 ## **4. Résultats et analyse**
 

@@ -47,7 +47,7 @@ L'organisation du projet est la suivante :
    │   ├── partie3_3.py  # Code pour la question 3 de la partie 3
    │   ├── partie3_4.py  # Code pour la question 4 de la partie 3
    │
-   ├── GR2_aloy_alyasfani.pdf  # Rapport détaillant le projet
+   ├── GR2_alouay_thoha.pdf  # Rapport détaillant le projet
    ├── README.md  # Fichier de documentation
    ```
 

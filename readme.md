@@ -75,4 +75,4 @@ Les résultats des simulations incluent :
    L'évolution des temps de résolution pour différentes tailles de graphes.
 Ces résultats sont :
    Affichés dans la console.
-   Documentés dans le fichier GR2_aloy_alyasfani.pdf, qui contient des tableaux et des graphiques pour chaque question.
+   Documentés dans le fichier GR2_alouay_thoha.pdf, qui contient des tableaux et des graphiques pour chaque question.

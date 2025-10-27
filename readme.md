@@ -1,208 +1,150 @@
-# 🧬 README — Commands Summary for PHYLIP TME (Exercises 2–5)
+# 🧬 README — PHYLIP TME (Exercises 2–5)
 
-This README contains all commands and execution steps used across the PHYLIP exercises.  
-It includes the sequence alignment, distance computation, tree reconstruction (NJ & UPGMA),  
-and visualization steps for each exercise.
-
----
-
-## ⚙️ General setup
-
-Make sure **Clustal Omega** and **PHYLIP** are installed and accessible from your terminal or PowerShell.  
-All PHYLIP programs (`protdist`, `neighbor`, etc.) must be run from inside the `phylip/exe` folder.
+This document summarizes **all steps and commands** used in exercises 2 to 5 of the PHYLIP TME.  
+It covers phylogenetic tree construction (NJ and UPGMA) from aligned protein sequences.
 
 ---
 
-## 🧩 Exercise 2 — Building NJ & UPGMA trees (PAH protein)
+## ⚙️ General Setup
 
-### 1️⃣ Prepare and align sequences
-```bash
-clustalo -i PAH.fasta -o PAH.aln-phylip --outfmt=phylip
-```
-
-### 2️⃣ Compute distance matrix
-```bash
-copy-item PAH.aln-phylip infile
-protdist
-rename-item outfile PAH_protdist.txt
-```
-
-### 3️⃣ Build NJ tree
-```bash
-copy-item PAH_protdist.txt infile
-neighbor
-# When prompted about "outfile" existing → type R
-# Confirm settings → Y
-rename-item outfile PAH_NJ_log.txt
-rename-item outtree PAH_NJ_tree.nwk
-```
-
-### 4️⃣ Build UPGMA tree
-```bash
-copy-item PAH_protdist.txt infile
-neighbor
-# Choose UPGMA (press N to toggle), then Y to confirm
-rename-item outfile PAH_UPGMA_log.txt
-rename-item outtree PAH_UPGMA_tree.nwk
-```
-
-### 5️⃣ Files produced
-```
-PAH_protdist.txt
-PAH_NJ_tree.nwk
-PAH_UPGMA_tree.nwk
-PAH_NJ_log.txt
-PAH_UPGMA_log.txt
-```
+- **PHYLIP** programs (`protdist`, `neighbor`, etc.) were executed inside the `phylip/exe` directory.  
+- Multiple sequence alignments were performed **online** using the EBI Clustal Omega tool:  
+  🔗 https://www.ebi.ac.uk/jdispatcher/msa/clustalo?outfmt=phylip  
+- Tree visualization and analysis were done using **iTOL**:  
+  🌿 https://itol.embl.de/upload.cgi  
+- ⚠️ Each exercise is stored in a **separate folder** (`Ex2`, `Ex3`, `Ex4`, `Ex5`).  
+  Therefore, even if some files share the same names (e.g., `outfile`, `outtree`, or `NJ_tree.nwk`),  
+  **this causes no conflict** because they are kept in different directories.
 
 ---
 
-## 🧬 Exercise 3 — CFTR protein in mammals
+## 🧩 Exercise 2 — PAH Protein
 
-### 1️⃣ Alignment
-```bash
-clustalo -i CFTR_in_mammals.fasta -o CFTR.aln-phylip --outfmt=phylip
-```
-
-### 2️⃣ Distance matrix
-```bash
-cp CFTR.aln-phylip infile
-protdist
-mv outfile protdist_out.txt
-```
-
-### 3️⃣ Neighbor-Joining tree
-```bash
-cp protdist_out.txt infile
-neighbor     # Y for NJ
-mv outfile neighbor_NJ.txt
-mv outtree NJ_tree.newick
-```
-
-### 4️⃣ UPGMA tree
-```bash
-cp protdist_out.txt infile
-neighbor     # N for UPGMA
-mv outfile neighbor_UPGMA.txt
-mv outtree UPGMA_tree.newick
-```
-
-### 5️⃣ Output files
-```
-CFTR.aln-phylip
-protdist_out.txt
-NJ_tree.newick
-UPGMA_tree.newick
-neighbor_NJ.txt
-neighbor_UPGMA.txt
-```
+### Steps
+1. **Alignment:** performed online via EBI, exported in **PHYLIP** format (`PAH.aln-phylip`).  
+2. **Distance matrix calculation:**
+   ```bash
+   copy-item PAH.aln-phylip infile
+   protdist
+   rename-item outfile PAH_protdist.txt
+   ```
+3. **Neighbor-Joining tree:**
+   ```bash
+   copy-item PAH_protdist.txt infile
+   neighbor
+   rename-item outfile PAH_NJ_log.txt
+   rename-item outtree PAH_NJ_tree.nwk
+   ```
+4. **UPGMA tree:**
+   ```bash
+   copy-item PAH_protdist.txt infile
+   neighbor
+   # Select UPGMA (press N), then Y to confirm
+   rename-item outfile PAH_UPGMA_log.txt
+   rename-item outtree PAH_UPGMA_tree.nwk
+   ```
+5. **Visualization:** `.nwk` trees uploaded to [iTOL](https://itol.embl.de/upload.cgi).
 
 ---
 
-## 🧬 Exercise 4 — p53 protein in mammals
+## 🧬 Exercise 3 — CFTR Protein (Mammals)
 
-### 1️⃣ Alignment
-```bash
-clustalo -i p53.fasta -o p53.aln-phylip --outfmt=phylip
-```
-
-### 2️⃣ Distance matrix
-```bash
-cp p53.aln-phylip infile
-protdist
-mv outfile protdist_out.txt
-```
-
-### 3️⃣ NJ tree
-```bash
-cp protdist_out.txt infile
-neighbor     # Y for NJ
-mv outfile neighbor_NJ.txt
-mv outtree NJ_tree.newick
-```
-
-### 4️⃣ UPGMA tree
-```bash
-cp protdist_out.txt infile
-neighbor     # N for UPGMA
-mv outfile neighbor_UPGMA.txt
-mv outtree UPGMA_tree.newick
-```
-
-### 5️⃣ Output files
-```
-p53.aln-phylip
-protdist_out.txt
-NJ_tree.newick
-UPGMA_tree.newick
-neighbor_NJ.txt
-neighbor_UPGMA.txt
-```
+### Steps
+1. **Alignment:** done online (EBI), exported as `CFTR.aln-phylip`.  
+2. **Distance matrix:**
+   ```bash
+   cp CFTR.aln-phylip infile
+   protdist
+   mv outfile CFTR_protdist.txt
+   ```
+3. **Neighbor-Joining tree:**
+   ```bash
+   cp CFTR_protdist.txt infile
+   neighbor     # Y for NJ
+   mv outfile CFTR_NJ_log.txt
+   mv outtree CFTR_NJ_tree.nwk
+   ```
+4. **UPGMA tree:**
+   ```bash
+   cp CFTR_protdist.txt infile
+   neighbor     # N for UPGMA
+   mv outfile CFTR_UPGMA_log.txt
+   mv outtree CFTR_UPGMA_tree.nwk
+   ```
+5. **Visualization on iTOL.**
 
 ---
 
-## 🦠 Exercise 5 — Spike (S) protein (Coronaviridae)
+## 🧬 Exercise 4 — p53 Protein (Mammals)
 
-### 1️⃣ Alignment
-```bash
-clustalo -i S_protein.afa -o S_protein.aln-phylip --outfmt=phylip
-```
-
-### 2️⃣ Distance matrix
-```bash
-cp S_protein.aln-phylip infile
-protdist
-mv outfile protdist_out.txt
-cp protdist_out.txt Ex5_distmatrix.txt
-```
-
-### 3️⃣ NJ tree
-```bash
-cp protdist_out.txt infile
-neighbor     # Y for NJ
-mv outfile neighbor_NJ.txt
-mv outtree NJ_tree.newick
-```
-
-### 4️⃣ UPGMA tree
-```bash
-cp protdist_out.txt infile
-neighbor     # N for UPGMA
-mv outfile neighbor_UPGMA.txt
-mv outtree UPGMA_tree.newick
-```
-
-### 5️⃣ Output files
-```
-S_protein.afa
-S_protein.aln-phylip
-protdist_out.txt
-Ex5_distmatrix.txt
-NJ_tree.newick
-UPGMA_tree.newick
-neighbor_NJ.txt
-neighbor_UPGMA.txt
-```
+### Steps
+1. **Alignment:** done online (EBI), exported as `p53.aln-phylip`.  
+2. **Distance matrix:**
+   ```bash
+   cp p53.aln-phylip infile
+   protdist
+   mv outfile p53_protdist.txt
+   ```
+3. **Neighbor-Joining tree:**
+   ```bash
+   cp p53_protdist.txt infile
+   neighbor
+   mv outfile p53_NJ_log.txt
+   mv outtree p53_NJ_tree.nwk
+   ```
+4. **UPGMA tree:**
+   ```bash
+   cp p53_protdist.txt infile
+   neighbor
+   mv outfile p53_UPGMA_log.txt
+   mv outtree p53_UPGMA_tree.nwk
+   ```
+5. **Visualization on iTOL.**
 
 ---
 
-## 🌳 Tree visualization
+## 🦠 Exercise 5 — Spike (S) Protein (Coronaviridae)
 
-You can visualize `.newick` files with:
-
-* **iTOL:** [https://itol.embl.de/upload.cgi](https://itol.embl.de/upload.cgi)
-* **FigTree:** `figtree NJ_tree.newick`
-
-Export your tree as `.png` or `.pdf` and include it in your report.
+### Steps
+1. **Alignment:** done online (EBI), exported as `S_protein.aln-phylip`.  
+2. **Distance matrix:**
+   ```bash
+   cp S_protein.aln-phylip infile
+   protdist
+   mv outfile S_protein_protdist.txt
+   cp S_protein_protdist.txt Ex5_distmatrix.txt
+   ```
+3. **Neighbor-Joining tree:**
+   ```bash
+   cp S_protein_protdist.txt infile
+   neighbor
+   mv outfile S_protein_NJ_log.txt
+   mv outtree S_protein_NJ_tree.nwk
+   ```
+4. **UPGMA tree:**
+   ```bash
+   cp S_protein_protdist.txt infile
+   neighbor
+   mv outfile S_protein_UPGMA_log.txt
+   mv outtree S_protein_UPGMA_tree.nwk
+   ```
+5. **Visualization:** uploaded and viewed on iTOL.
 
 ---
 
-## 🪴 Notes and good practices
+## 🌳 Tree Visualization and Export
 
-* Always rename `outfile` and `outtree` after each run to avoid overwriting.
-* When PHYLIP asks about existing `outfile`, **type `R`** (Replace).
-* Use **Neighbor-Joining (NJ)** for realistic phylogenies, and **UPGMA** for comparison.
-* Keep a clear directory structure for each exercise.
+All `.nwk` files were uploaded to **iTOL** for visualization and export (as `.png` or `.pdf`).  
+Direct link: [https://itol.embl.de/upload.cgi](https://itol.embl.de/upload.cgi)
+
+---
+
+## 💡 Notes and Best Practices
+
+- Each exercise has its **own folder** (`Ex2`, `Ex3`, `Ex4`, `Ex5`), preventing filename conflicts.  
+- Rename `outfile` and `outtree` after each PHYLIP run if needed.  
+- Use **Neighbor-Joining (NJ)** for main phylogenetic trees and **UPGMA** for comparison.  
+- Keep a clean, organized folder structure for reproducibility.
 
 ---
 

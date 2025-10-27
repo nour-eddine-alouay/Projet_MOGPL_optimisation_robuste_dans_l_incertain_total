@@ -137,15 +137,4 @@ It covers phylogenetic tree construction (NJ and UPGMA) from aligned protein seq
 All `.nwk` files were uploaded to **iTOL** for visualization and export (as `.png` or `.pdf`).  
 Direct link: [https://itol.embl.de/upload.cgi](https://itol.embl.de/upload.cgi)
 
----
 
-## 💡 Notes and Best Practices
-
-- Each exercise has its **own folder** (`Ex2`, `Ex3`, `Ex4`, `Ex5`), preventing filename conflicts.  
-- Rename `outfile` and `outtree` after each PHYLIP run if needed.  
-- Use **Neighbor-Joining (NJ)** for main phylogenetic trees and **UPGMA** for comparison.  
-- Keep a clean, organized folder structure for reproducibility.
-
----
-
-📘 **End of README**
